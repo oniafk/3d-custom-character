@@ -20,8 +20,8 @@ function App() {
         }}
         shadows
       >
-        <color attach="background" args={["#130f30"]} />
-        <fog attach="fog" args={["#130f30", 10, 40]} />
+        <color attach="background" args={["#2e284a"]} />
+        <fog attach="fog" args={["#2e284a", 10, 40]} />
         <group position-y={-1}>
           <Experience />
         </group>

@@ -114,7 +114,7 @@ const RandomizeButton = () => {
   const randomize = useConfiguratorStore((state) => state.randomize);
   return (
     <button
-      className="rounded-lg bg-indigo-500 hover:bg-indigo-600 transition-colors duration-300 text-white font-medium px-4 py-3 pointer-events-auto drop-shadow-md"
+      className="rounded-lg bg-violet-800 hover:bg-violet-950 transition-colors duration-300 text-white font-medium px-4 py-3 pointer-events-auto drop-shadow-md"
       onClick={randomize}
     >
       <svg
@@ -135,41 +135,11 @@ const RandomizeButton = () => {
   );
 };
 
-const ScreenshotButton = () => {
-  const screenshot = useConfiguratorStore((state) => state.screenshot);
-  return (
-    <button
-      className="rounded-lg bg-indigo-500 hover:bg-indigo-600 transition-colors duration-300 text-white font-medium px-4 py-3 pointer-events-auto drop-shadow-md"
-      onClick={screenshot}
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        strokeWidth={1.5}
-        stroke="currentColor"
-        className="size-6"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M6.827 6.175A2.31 2.31 0 0 1 5.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 0 0-1.134-.175 2.31 2.31 0 0 1-1.64-1.055l-.822-1.316a2.192 2.192 0 0 0-1.736-1.039 48.774 48.774 0 0 0-5.232 0 2.192 2.192 0 0 0-1.736 1.039l-.821 1.316Z"
-        />
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M16.5 12.75a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0ZM18.75 10.5h.008v.008h-.008V10.5Z"
-        />
-      </svg>
-    </button>
-  );
-};
-
 const DownloadButton = () => {
   const download = useConfiguratorStore((state) => state.download);
   return (
     <button
-      className="rounded-lg bg-indigo-500 hover:bg-indigo-600 transition-colors duration-300 text-white font-medium px-4 py-3 pointer-events-auto drop-shadow-md"
+      className="rounded-lg bg-violet-800 hover:bg-violet-950 transition-colors duration-300 text-white font-medium px-4 py-3 pointer-events-auto drop-shadow-md"
       onClick={download}
     >
       Download
@@ -192,22 +162,14 @@ export const UI = () => {
           loading ? "opacity-100" : "opacity-0"
         }`}
       >
-        <img
-          src="/images/wawasensei-white.png"
-          className="w-40 animate-pulse"
-        />
+        <div className="w-full h-full flex items-center justify-center">
+          <div className="loader"></div>
+        </div>
       </div>
       <div className="mx-auto h-full max-w-screen-xl w-full flex flex-col justify-between">
-        <div className="flex justify-between items-center p-10">
-          <a
-            className="pointer-events-auto"
-            href="https://lessons.wawasensei.dev/courses/react-three-fiber"
-          >
-            <img className="w-20" src="/images/wawasensei-white.png" />
-          </a>
+        <div className="flex flex-row-reverse items-end p-10">
           <div className="flex items-cente gap-2">
             <RandomizeButton />
-            <ScreenshotButton />
             <DownloadButton />
           </div>
         </div>
@@ -225,8 +187,8 @@ export const UI = () => {
               className={`flex-1 pointer-events-auto  p-4 text-white transition-colors duration-200 font-medium
                 ${
                   mode === UI_MODES.CUSTOMIZE
-                    ? "bg-indigo-500/90"
-                    : "bg-indigo-500/30 hover:bg-indigo-500/50"
+                    ? "bg-violet-500/90"
+                    : "bg-violet-500/30 hover:bg-violet-500/50"
                 }
               `}
               onClick={() => setMode(UI_MODES.CUSTOMIZE)}
@@ -238,8 +200,8 @@ export const UI = () => {
               className={`flex-1 pointer-events-auto p-4 text-white transition-colors duration-200 font-medium
                 ${
                   mode === UI_MODES.PHOTO
-                    ? "bg-indigo-500/90"
-                    : "bg-indigo-500/30 hover:bg-indigo-500/50"
+                    ? "bg-violet-500/90"
+                    : "bg-violet-500/30 hover:bg-violet-500/50"
                 }
                 `}
               onClick={() => setMode(UI_MODES.PHOTO)}

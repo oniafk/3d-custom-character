@@ -57,7 +57,7 @@ export const useConfiguratorStore = create((set, get) => ({
         },
       },
     }));
-    if (get().currentCategory.name === "Head") {
+    if (get().currentCategory.name === "head") {
       get().updateSkin(color);
     }
   },
@@ -74,6 +74,7 @@ export const useConfiguratorStore = create((set, get) => ({
       sort: "-created",
     });
     const customization = {};
+
     categories.forEach((category) => {
       category.assets = assets.filter((asset) => asset.group === category.id);
       customization[category.name] = {
